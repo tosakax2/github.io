@@ -185,11 +185,6 @@ main {
   border-radius: 10px;
   box-shadow: 0 3px 3px rgba(202, 100, 0, 0.2);
 }
-@media screen and (max-width: 900px) {
-  #box-main {
-    min-width: 0;
-  }
-}
 @media screen and (max-width: 1200px) {
   #box-sub {
     display: none;
@@ -276,4 +271,16 @@ small {
 #footer {
   background: #432f2f;
   padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  #box-main {
+    border-radius: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  article {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }
