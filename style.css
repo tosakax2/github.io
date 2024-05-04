@@ -289,6 +289,7 @@ body {
 #box-content, #box-sidebar {
   background-color: white;
   border-radius: 0.5rem;
+  box-shadow: 0 0 3px rgba(182, 29, 29, 0.2);
 }
 #content {
   padding: 2rem;
