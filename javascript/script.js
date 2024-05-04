@@ -1,7 +1,7 @@
 //テキストのカウントアップ+バーの設定
 var bar = new ProgressBar.Circle(splash_text, {//id名を指定
   easing: 'easeOut',  //アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
-  duration: 1400, //時間指定(1000＝1秒)
+  duration: 1000, //時間指定(1000＝1秒)
   strokeWidth: 6, //進捗ゲージの太さ
   color: 'linen', //進捗ゲージのカラー
   trailWidth: 3,  //ゲージベースの線の太さ

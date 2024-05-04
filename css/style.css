@@ -160,7 +160,7 @@ body {
   font-weight: bolder;
   transition: all 0.3s;
 }
-#page-top a:hover {
+#page-top a:active {
   background: #555;
 }
 /*リンクを右下に固定*/
@@ -303,13 +303,13 @@ body {
     width: 800px;
   }
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 850px) {
   #container-main {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   #container-main {
     margin-left: 0;
     margin-right: 0;
