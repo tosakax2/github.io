@@ -1,0 +1,431 @@
+@charset "utf-8";
+
+/*==========全体共通==========*/
+body {
+  font-family: "Note Sans JP", sans-serif;
+  -webkit-text-size-adjust:100%;
+  background-color: linen;
+}
+
+/*==========Loading背景画面設定==========*/
+#splash {
+  /*fixedで全面に固定*/
+  z-index: 100000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+/* Loading画像中央配置　*/
+#splash_text {
+  z-index: 99999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 150px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/*割れる画面のアニメーション*/
+.loader_cover {
+  width: 100%;
+  height: 50%;
+  background-color: #432f2f;
+  transition: all 0.2s cubic-bezier(.04, .435, .315, .9);
+  transform: scaleY(1);
+}
+/*上の画面*/
+.loader_cover-up {
+  transform-origin: center top;
+}
+/*下の画面*/
+.loader_cover-down {
+  position: absolute;
+  bottom: 0;
+  transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+  transform: scaleY(0);
+}
+
+/*==========ハンバーガーメニュー==========*/
+#g-nav {
+  z-index: 999; /*最前面へ*/
+  position: fixed;  /*画面に固定*/
+  left: 0;
+  bottom: -120%;
+  width: 100%;
+  height: 100vh;  /*ナビの高さ*/
+  background-color: tan;
+  transition: all 0.5s; /*動き*/
+}
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+  bottom: 0;
+}
+/*ナビが増えた場合の縦スクロール*/
+#g-nav.panelactive #g-nav-list {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/*ナビ*/
+#g-nav ul {
+  /*天地中央揃え*/
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*リストの調整*/
+#g-nav li {
+  list-style: none;
+  text-align: center;
+}
+#g-nav li a {
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/*==========ハンバーガーのボタン==========*/
+.openbtn {
+  z-index: 9999;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 15%;
+  background-color: #432f2f;
+}
+/*三本線を描画*/
+.openbtn span {
+  display: inline-block;
+  position: absolute;
+  left: 14px;
+  height: 4px;
+  border-radius: 2px;
+  width: 45%;
+  background-color: white;
+  transition: all 0.4s;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+/*三本線がバツに変化*/
+.openbtn.active span:nth-of-type(1) {
+  top: 23px;
+  transform: rotate(-225deg);
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 23px;
+  transform: rotate(225deg);
+}
+
+/*==========ページトップ==========*/
+#page-top a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  background-color: #69821b;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  transition: all 0.3s;
+}
+#page-top a:active {
+  background: #555;
+}
+/*リンクを右下に固定*/
+#page-top {
+  z-index: 2;
+  position: fixed;
+  right: 5%;
+  /*はじめは非表示*/
+  opacity: 0;
+  transform: translateY(100px);
+}
+/*上がる動き*/
+#page-top.UpMove {
+  animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-25px);
+  }
+}
+/*下がる動き*/
+#page-top.DownMove{
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 1;
+    transform: translateY(-25%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(200px);
+  }
+}
+
+/*==========アコーディオン==========*/
+.accordion-area{
+  list-style: none;
+  width: 96%;
+  margin:0 auto;
+}
+.accordion-area li{
+  margin: 10px 0;
+}
+.accordion-area section {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+}
+/*アコーディオンタイトル*/
+.title {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+}
+/*アイコンの＋と×*/
+.title::before,
+.title::after {
+  position: absolute;
+  content:'';
+  width: 15px;
+  height: 2px;
+  background-color: #222;
+  border-radius: 1rem;
+  transition: all 0.5s;
+}
+.title::before {
+  top: 48%;
+  left: 15px;
+  transform: rotate(0deg);
+}
+.title::after {
+  top: 48%;
+  left: 15px;
+  transform: rotate(90deg);
+}
+/*closeというクラスがついたら形状変化*/
+.title.close::before {
+  transform: rotate(135deg);
+}
+.title.close::after {
+  transform: rotate(225deg);
+}
+/*アコーディオンで現れるエリア*/
+.box {
+  display: none;  /*はじめは非表示*/
+  background: #f3f3f3;
+  border-radius: 0.5rem;
+  margin:0 3% 3% 3%;
+  padding: 3%;
+}
+
+/*==========レイアウト==========*/
+#container-title {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+  padding-inline: 1rem;
+}
+
+#container-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 3rem;
+  margin-bottom: 9rem;  /*トップボタンとの干渉回避*/
+  margin-inline: 1rem;
+}
+#container-content {
+  width: 800px;
+  margin-right: 1rem;
+}
+#container-sidebar {
+  width: 400px;
+}
+
+#box-content, #box-sidebar {
+  background-color: white;
+  border-radius: 0.5rem;
+}
+#content {
+  padding: 2rem;
+}
+#sidebar {
+  padding: 0.6rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  #container-main {
+    flex-wrap: wrap;
+    margin-inline: 2rem;
+  }
+  #container-content {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+  #container-sidebar {
+    width: 800px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #container-main {
+    margin-inline: 1rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #container-main {
+    margin-inline: 0;
+  }
+  #box-content, #box-sidebar {
+    border-radius: 0;
+  }
+  #content {
+    padding: 1rem;
+  }
+}
+
+/*ヘッダー*/
+#header {
+  background: #432f2f; /*黒鳶*/
+  color: white;
+  display: flex;
+}
+#header-logo {
+  width: 95%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1.4rem;
+  max-width: 1500px;
+  margin: 0 auto;
+  transition: 0.2s;
+}
+/*見出し1*/
+h1 {
+  position: relative;
+  padding-bottom: 2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.5rem;
+}
+h1:before {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  display: inline-block;
+  width: 60px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 2px;
+}
+/*見出し2*/
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: #fddea5;
+  padding: 0.3rem 0.3rem 0.3rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #474747;
+  border-radius: 10px;
+}
+h2:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f5ad";
+  display: inline-block;
+  line-height: 40px;
+  position: absolute;
+  padding: 0rem;
+  color: white;
+  background-color: #f39800;
+  font-size: 1.3rem;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  left: -0.6rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: solid 2px white; 
+  border-radius: 50%;
+}
+/*見出し3*/
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+/*本文*/
+article {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+article p {
+  line-height: 1.5;
+}
+article a {
+  word-break: break-all;
+  color: #e2041b;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+
+/*フッター*/
+small {
+  color: white;
+  display: block;
+  text-align: center;
+}
+#footer {
+  background: #432f2f;
+  padding: 20px;
+}

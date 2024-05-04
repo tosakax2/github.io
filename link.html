@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+
+    <!--レスポンシブのための設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--リセットCSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
+    
+    <!--CSS読み込み-->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!--GoogleFont-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/66c6d19155.js" crossorigin="anonymous"></script>
+
+    <title>CRISTATA - トサカのメモ帳</title>
+  </head>
+
+  <body>
+    <!--スプラッシュ-->
+    <div id="splash">
+      <div id="splash_text"></div>
+      <div class="loader_cover loader_cover-up"></div>
+      <div class="loader_cover loader_cover-down"></div>
+    </div>
+
+    <!--ヘッダー-->
+    <header id="header">
+      <p id="header-logo"><a href="index.html">CRISTATA - トサカのメモ帳</a><p>
+    </header>
+
+    <!--ハンバーガーメニュー-->
+    <div class="openbtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="g-nav">
+      <div id="g-nav-list"> <!--ナビの数が増えたときに縦スクロールするためのdiv-->
+        <ul>
+          <li><a href="./index.html">トップページ</a></li>
+          <li><a href="./about.html">このサイトについて</a></li>
+          <li><a href="./link.html">リンク置き場</a></li>
+          <li><a href="./post.html">投稿記事</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div id="container-title">
+        <article>
+          <h1>リンク置き場</h1>
+        </article>
+      </div>
+      <div id="container-main">
+        <div id="container-content">
+          <div id="box-content">
+            <div id="content">
+
+              <article>
+                <p>世の中に有能なサイトが多すぎて自分のブックマークが大変なことになってきたので、整理ついでにまとめておきます。</p>
+              </article>
+              <!--
+              <article>
+                <h2></h2>
+                <h3></h3>
+                <a href=""></a>
+                <p></p>
+              </article>
+              -->
+
+              <article>
+                <h2>ナレッジコミュニティ</h2>
+                <h3>Zenn</h3>
+                <a href="https://zenn.dev/">https://zenn.dev/</a>
+                <p>クラスメソッド株式会社が運営するエンジニア向け情報共有コミュニティです。</p>
+
+                <h3>Qiita</h3>
+                <a href="https://qiita.com/">https://qiita.com/</a>
+                <p>Qiita株式会社が運営するエンジニア向け情報共有コミュニティです。</p>
+              </article>
+
+              <article>
+                <h2>3DCG</h2>
+                <h3>忘却まとめ</h3>
+                <a href="https://bookyakuno.com/">https://bookyakuno.com/</a>
+                <p>Blenderのちょっと踏み込んだ情報がまとめられています。有用なアドオンの紹介もされているので定期的に訪れましょう。</p>
+
+                <h3>Blender Market</h3>
+                <a href="https://blendermarket.com/">https://blendermarket.com/</a>
+                <p>Blenderのアドオンはここから購入しましょう。頻繁にセールが行われています。</p>
+
+                <h3>ambientCG</h3>
+                <a href="https://ambientcg.com/">https://ambientcg.com/</a>
+                <p>CC0のテクスチャが大量に配布されています。</p>
+
+                <h3>Poly Haven</h3>
+                <a href="https://polyhaven.com/">https://polyhaven.com/</a>
+                <p>テクスチャだけでなくHDRI画像もダウンロードできます。</p>
+
+                <h3>VRoid Hub</h3>
+                <a href="https://hub.vroid.com/">https://hub.vroid.com/</a>
+                <p>自作のVRMモデルを登録して動かすことが出来ます。</p>
+              </article>
+
+              <article>
+                <h2>ドット絵</h2>
+                <h3>ドット道　復活版</h3>
+                <a href="http://temaemisokoubou.web.fc2.com/">http://temaemisokoubou.web.fc2.com/</a>
+                <p>かなり古いサイトですが、ここを見ればドット絵に必要な知識は殆ど得られると思います。</p>
+
+                <h3>ドット絵作成講座</h3>
+                <a href="https://2d6.parasite.jp/dot_kouza/index.html">https://2d6.parasite.jp/dot_kouza/index.html</a>
+                <p>サクッと読めるのでドット絵をこれから描き始めるという人におすすめです。</p>
+              </article>
+
+              <article>
+                <h2>コーディング全般</h2>
+                <h3>Github</h3>
+                <a href="https://github.co.jp/">https://github.co.jp/</a>
+                <p>コードの共有や共同開発ができます。</p>
+                <p>チームでソフトウェア開発する際にはもはや必須とも言えます。</p>
+
+                <h3>paiza転職</h3>
+                <a href="https://paiza.jp/challenges/info">https://paiza.jp/challenges/info</a>
+                <p>プログラミングスキルチェック問題を受けられます。</p>
+
+                <h3>JavaDrive</h3>
+                <a href="https://www.javadrive.jp/">https://www.javadrive.jp/</a>
+                <p>幅広に知識を身に着けたいならこのサイトが手っ取り早いでしょう。</p>
+              </article>
+
+              <article>
+                <h2>Python</h2>
+                <h3>Python早見帳</h3>
+                <a href="https://chokkan.github.io/python/index.html">https://chokkan.github.io/python/index.html</a>
+                <p></p>
+              </article>
+
+              <article>
+                <h2>C++</h2>
+                <h3>ゼロから学ぶ C++</h3>
+                <a href="https://rinatz.github.io/cpp-book/">https://rinatz.github.io/cpp-book/</a>
+                <p>文字通り、ゼロからすべてを学ぶことが出来ます。</p>
+              </article>
+
+              <article>
+                <h2>HTML/CSS</h2>
+                <h3>CodePen</h3>
+                <a href="https://codepen.io/">https://codepen.io/</a>
+                <p>基本無料で使えるオンラインエディター。</p>
+                <p>HTML,CSS,JavaScriptを記述可能で、リアルタイムでプレビューを表示してくれます。</p>
+                <p>ブログサイトへの埋込みが簡単なので、コードの共有がしたくなったときにお世話になります。</p>
+
+                <h3>web.dev</h3>
+                <a href="https://web.dev/?hl=ja">https://web.dev/?hl=ja/</a>
+                <p>HTML,CSS,JavaScriptの勉強ができます。</p>
+                <p>web開発に関する知識を身に着けるのに最適のサイトです。</p>
+              </article>
+
+              <article>
+                <h2>配色</h2>
+                <h3>原色大辞典</h3>
+                <a href="https://www.colordic.org/">https://www.colordic.org/</a>
+                <p>ブラウザで定義されているHTMLカラーネーム、日本の伝統色、世界の伝統色、Webセーフカラー、パステルカラー、ビビッドカラー、モノトーン、地下鉄のシンボルカラー、国鉄制定の塗装色の9つの色見本コンテンツがまとめられています。</p>
+                <p>色に迷ったらここからもらっていきましょう。</p>
+                
+                <h3>NIPPON COLOR</h3>
+                <a href="https://nipponcolors.com/">https://nipponcolors.com/</a>
+                <p>膨大な数の日本の伝統色が収録されています。</p>
+              </article>
+
+              <article>
+                <h2>艦隊これくしょん</h2>
+                <h3>艦隊これ公式サイト</h3>
+                <a href="https://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854">https://www.dmm.com/netgame/social/-/gadgets/=/app_id=854854</a>
+                <p>古いゲーム。</p>
+
+                <h3>制空権シミュレータ v2</h3>
+                <a href="https://noro6.github.io/kc-web/">https://noro6.github.io/kc-web/</a>
+                <p>制空値を算出してくれるすごいやつです。</p>
+
+                <h3>ぜかましねっと</h3>
+                <a href="https://zekamashi.net/">https://zekamashi.net/</a>
+                <p>艦これ攻略系サイトの中で最も見やすくて信頼できると思います。</p>
+              </article>
+
+              <article>
+                <h2>小説/SS</h2>
+                <h3>小説家になろう</h3>
+                <a href="https://syosetu.com/">https://syosetu.com/</a>
+                <p>言わずと知れた小説投稿サイト。まさに玉石混交といったところです。</p>
+
+                <h3>ハーメルン</h3>
+                <a href="https://syosetu.com/">https://syosetu.com/</a>
+                <p>二次創作も一次創作もOKな小説投稿サイト。全体的に小説のクオリティが高いイメージがあります。</p>
+                <p>独自の特殊タグの存在によって、Webサイトであることが最大限に活かされています。</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--フッター-->
+    <footer id="footer">
+      <button id="page-top"><a href="#"><i class="fa-solid fa-angles-up"></i></a></button>
+      <small>&copy; copyright.(仮)</small>
+    </footer>
+
+    <!--jQuery読み込み-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
